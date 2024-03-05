@@ -286,6 +286,18 @@ func (f *Form) WithProgramOptions(opts ...tea.ProgramOption) *Form {
 	return f
 }
 
+// WithSubmitCommandd sets the command to run when the form is submitted.
+func (f *Form) WithSubmitCommand(cmd tea.Cmd) *Form {
+	f.submitCmd = cmd
+	return f
+}
+
+// WithCancelCommand sets the command to run when the form is cancelled.
+func (f *Form) WithCancelCommand(cmd tea.Cmd) *Form {
+	f.cancelCmd = cmd
+	return f
+}
+
 // UpdateFieldPositions sets the position on all the fields.
 func (f *Form) UpdateFieldPositions() *Form {
 	firstGroup := 0
